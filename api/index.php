@@ -27,8 +27,6 @@
       </thead>
       <tbody>
         <?php
-        echo "PRUEBA VERCEL OK";
-        exit;
         $conexion = mysqli_connect(getenv('MYSQL_HOST'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'), "SG");
 
         $cadenaSQL = "select * from s_customer";
