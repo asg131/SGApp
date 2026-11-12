@@ -27,10 +27,8 @@
       </thead>
       <tbody>
         <?php
-        echo "MYSQL_HOST: " . getenv('MYSQL_HOST') . "<br>";
-        echo "MYSQL_USER: " . getenv('MYSQL_USER') . "<br>";
-        echo "MYSQL_PASSWORD definida: " . (getenv('MYSQL_PASSWORD') !== false ? "SI" : "NO") . "<br>";
-        echo "Longitud contraseña: " . strlen(getenv('MYSQL_PASSWORD')) . "<br>";
+        echo "PRUEBA VERCEL OK";
+        exit;
         $conexion = mysqli_connect(getenv('MYSQL_HOST'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'), "SG");
 
         $cadenaSQL = "select * from s_customer";
