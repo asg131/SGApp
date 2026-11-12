@@ -27,17 +27,9 @@
       </thead>
       <tbody>
         <?php
+        $password = Mellamoainhoa03;
 
-        $host = getenv('MYSQL_HOST');
-        $user = getenv('MYSQL_USER');
-        $password = getenv('MYSQL_PASSWORD');
-        
-        echo "HOST: " . ($host ?: 'VACIO') . "<br>";
-        echo "USER: " . ($user ?: 'VACIO') . "<br>";
-        echo "PASSWORD DEFINIDA: " . ($password !== false && $password !== '' ? 'SI' : 'NO') . "<br>";
-        echo "LONGITUD PASSWORD: " . strlen($password ?: '') . "<br>";
-
-        $conexion = mysqli_connect(getenv('MYSQL_HOST'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'), "SG");
+        $conexion = mysqli_connect(getenv('MYSQL_HOST'), getenv('MYSQL_USER'), password, "SG");
 
         $cadenaSQL = "select * from s_customer";
         $resultado = mysqli_query($conexion, $cadenaSQL);
