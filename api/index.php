@@ -27,9 +27,12 @@
       </thead>
       <tbody>
         <?php
-        $password = Mellamoainhoa03;
-
-        $conexion = mysqli_connect(getenv('MYSQL_HOST'), getenv('MYSQL_USER'), password, "SG");
+        $conexion = mysqli_connect(
+            '35.255.8.80',
+            'sgapp',
+            'Mellamoainhoa03.',
+            'SG'
+        );
 
         $cadenaSQL = "select * from s_customer";
         $resultado = mysqli_query($conexion, $cadenaSQL);
