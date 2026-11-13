@@ -27,12 +27,9 @@
       </thead>
       <tbody>
         <?php
-        $conexion = mysqli_connect(
-            '35.255.8.80',
-            'sgapp',
-            'Mellamoainhoa03.',
-            'SG'
-        );
+        $conexion = mysqli_init();
+        mysqli_ssl_set($conexion, NULL, NULL, NULL, NULL, NULL);
+        mysqli_real_connect($conexion, getenv('MYSQL_HOST'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'), "SG", 3306, NULL, MYSQLI_CLIENT_SSL | MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT);
 
         $cadenaSQL = "select * from s_customer";
         $resultado = mysqli_query($conexion, $cadenaSQL);
